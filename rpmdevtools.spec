@@ -12,7 +12,6 @@ License:        GPL
 URL:            http://fedoraproject.org/
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        http://people.redhat.com/nphilipp/spectool/spectool-%{spectool_version}.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildArch:      noarch
 Provides:       spectool = %{spectool_version}
