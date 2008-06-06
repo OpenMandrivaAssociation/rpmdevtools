@@ -3,7 +3,7 @@
 
 Name:           rpmdevtools
 Version:        6.4
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        RPM Development Tools
 
 Group:          System/Configuration/Packaging 
@@ -83,7 +83,7 @@ rpmdev-extract      Extract various archives, "tar xvf" style
 %{__cp} -a spectool*/spectool %{buildroot}%{_bindir}
 
 %{__mkdir_p} %{buildroot}%{emacs_sitestart_d}
-%{__ln_s} %{buildroot}%{_datadir}/rpmdevtools/rpmdev-init.el %{buildroot}%{emacs_sitestart_d}/rpmdev-init.el
+%{__ln_s} %{_datadir}/rpmdevtools/rpmdev-init.el %{buildroot}%{emacs_sitestart_d}/rpmdev-init.el
 #/bin/touch %{buildroot}%{emacs_sitestart_d}/rpmdev-init.elc
 
 %{__chmod} 755 %{buildroot}%{_datadir}/rpmdevtools/{trap.sh,template.init,tmpdir.sh}
