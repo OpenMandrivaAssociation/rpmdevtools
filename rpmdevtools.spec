@@ -3,7 +3,7 @@
 
 Name:           rpmdevtools
 Version:        6.4
-Release:        %mkrel 2
+Release:        %mkrel 3
 Summary:        RPM Development Tools
 
 Group:          System/Configuration/Packaging 
