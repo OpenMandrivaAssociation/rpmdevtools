@@ -18,6 +18,7 @@ BuildArch:      noarch
 Provides:       spectool = %{spectool_version}
 Obsoletes:      fedora-rpmdevtools < 5.0
 BuildRequires:  help2man
+BuildRequires:  python-rpm
 # Minimal RPM build requirements
 Requires:       bash
 Requires:       bzip2
