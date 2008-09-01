@@ -2,8 +2,8 @@
 %define spectool_version   1.0.9
 
 Name:           rpmdevtools
-Version:        6.4
-Release:        %mkrel 3
+Version:        6.7
+Release:        %mkrel 1
 Summary:        RPM Development Tools
 
 Group:          System/Configuration/Packaging 
