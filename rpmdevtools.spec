@@ -1,5 +1,5 @@
 %define emacs_sitestart_d  %{_sysconfdir}/emacs/site-start.d
-%define spectool_version   1.0.9
+%define spectool_version   1.0.10
 
 Name:           rpmdevtools
 Version:        6.7
