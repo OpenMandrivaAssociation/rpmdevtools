@@ -3,7 +3,7 @@
 
 Name:           rpmdevtools
 Version:        6.7
-Release:        %mkrel 2
+Release:        3
 Summary:        RPM Development Tools
 
 Group:          System/Configuration/Packaging 
@@ -16,7 +16,6 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildArch:      noarch
 Provides:       spectool = %{spectool_version}
-Obsoletes:      fedora-rpmdevtools < 5.0
 BuildRequires:  help2man
 BuildRequires:  python-rpm
 # Minimal RPM build requirements
@@ -48,7 +47,7 @@ Requires:       fakeroot
 Requires:       file
 Requires:       perl
 Requires:       python
-Requires:       rpm-python
+Requires:       python-rpm
 #Requires:      sed
 Requires:       wget
 
