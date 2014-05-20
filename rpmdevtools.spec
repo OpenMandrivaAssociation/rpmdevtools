@@ -14,7 +14,6 @@ Source0:        https://fedorahosted.org/released/rpmdevtools/%{name}-%{version}
 BuildArch:      noarch
 # help2man, pod2man, *python for creating man pages
 BuildRequires:  help2man
-BuildRequires:  %{_bindir}/pod2man
 BuildRequires:  python >= 2.4
 BuildRequires:  python-rpm
 # emacs-common >= 1:22.3-3 for macros.emacs
