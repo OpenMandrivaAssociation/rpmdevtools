@@ -3,7 +3,7 @@
 
 Name:           rpmdevtools
 Version:        8.4
-Release:        2%{?dist}
+Release:        3
 Summary:        RPM Development Tools
 
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
@@ -68,9 +68,7 @@ make %{?_smp_mflags}
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
-make install DESTDIR=$RPM_BUILD_ROOT
+%makeinstall_std
 
 %if 0%{?fedora}
 for dir in %{_emacs_sitestartdir} %{_xemacs_sitestartdir} ; do
