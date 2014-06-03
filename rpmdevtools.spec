@@ -1,42 +1,42 @@
 %global _emacs_sitestartdir %{_datadir}/emacs/site-lisp/site-start.d
 %global spectool_version 1.0.10
 
-Name:           rpmdevtools
-Version:        8.4
-Release:        3
-Summary:        RPM Development Tools
+Name:		rpmdevtools
+Version:	8.4
+Release:	4
+Summary:	RPM Development Tools
 
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
-License:        GPLv2+ and GPLv2
-URL:            https://fedorahosted.org/rpmdevtools/
-Source0:        https://fedorahosted.org/released/rpmdevtools/%{name}-%{version}.tar.xz
+License:	GPLv2+ and GPLv2
+URL:		https://fedorahosted.org/rpmdevtools/
+Source0:	https://fedorahosted.org/released/rpmdevtools/%{name}-%{version}.tar.xz
 
-BuildArch:      noarch
+BuildArch:	noarch
 # help2man, pod2man, *python for creating man pages
-BuildRequires:  help2man
-BuildRequires:  python >= 2.4
-BuildRequires:  python-rpm
+BuildRequires:	help2man
+BuildRequires:	python >= 2.4
+BuildRequires:	python-rpm
 # emacs-common >= 1:22.3-3 for macros.emacs
-BuildRequires:  emacs-common
+BuildRequires:	emacs-common
 %if 0%{?fedora}
 # xemacs-common >= 21.5.29-8 for macros.xemacs
-BuildRequires:  xemacs-common >= 21.5.29-8
+BuildRequires: 	xemacs-common >= 21.5.29-8
 %endif
-Provides:       spectool = %{spectool_version}
-Requires:       curl
-Requires:       diffutils
-Requires:       fakeroot
-Requires:       file
-Requires:       findutils
-Requires:       gawk
-Requires:       grep
-Requires:       python >= 2.4
-Requires:       rpm-build >= 4.4.2.3
-Requires:       python-rpm
-Requires:       sed
-Requires:       emacs-common
+Provides:	spectool = %{spectool_version}
+Requires:	curl
+Requires:	diffutils
+Requires:	fakeroot
+Requires:	file
+Requires:	findutils
+Requires:	gawk
+Requires:	grep
+Requires:	python >= 2.4
+Requires:	rpm-build >= 4.4.2.3
+Requires:	python-rpm
+Requires:	sed
+Requires:	emacs-common
 %if 0%{?fedora}
-Requires:       xemacs-filesystem
+Requires:	xemacs-filesystem
 %endif
 
 %description
