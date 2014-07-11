@@ -3,7 +3,7 @@
 
 Name:		rpmdevtools
 Version:	8.4
-Release:	5
+Release:	6
 Summary:	RPM Development Tools
 
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
