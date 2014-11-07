@@ -3,7 +3,7 @@
 
 Name:		rpmdevtools
 Version:	8.4
-Release:	6
+Release:	7
 Summary:	RPM Development Tools
 
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
@@ -59,7 +59,7 @@ rpmdev-bumpspec     Bump revision in specfile
 
 %prep
 %setup -q
-
+sed -i 's|/usr/bin/python|%__python2|' rpmdev*
 
 %build
 %configure --libdir=%{_prefix}/lib
