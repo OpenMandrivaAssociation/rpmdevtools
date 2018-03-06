@@ -2,8 +2,8 @@
 %global spectool_version 1.0.10
 
 Name:		rpmdevtools
-Version:	8.4
-Release:	9
+Version:	8.10
+Release:	1
 Summary:	RPM Development Tools
 
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
@@ -14,7 +14,7 @@ Source0:	https://fedorahosted.org/released/rpmdevtools/%{name}-%{version}.tar.xz
 BuildArch:	noarch
 # help2man, pod2man, *python for creating man pages
 BuildRequires:	help2man
-BuildRequires:	python >= 2.4
+BuildRequires:	python >= 3
 BuildRequires:	python-rpm
 # emacs-common >= 1:22.3-3 for macros.emacs
 BuildRequires:	emacs-common
@@ -30,7 +30,7 @@ Requires:	file
 Requires:	findutils
 Requires:	gawk
 Requires:	grep
-Requires:	python >= 2.4
+Requires:	python >= 3
 Requires:	rpm-build >= 4.4.2.3
 Requires:	python-rpm
 Requires:	sed
@@ -63,11 +63,10 @@ sed -i 's|/usr/bin/python|%__python2|' rpmdev*
 
 %build
 %configure --libdir=%{_prefix}/lib
-make %{?_smp_mflags}
-
+make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %if 0%{?fedora}
 for dir in %{_emacs_sitestartdir} %{_xemacs_sitestartdir} ; do
