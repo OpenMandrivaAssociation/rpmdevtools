@@ -63,7 +63,7 @@ sed -i 's|/usr/bin/python|%__python2|' rpmdev*
 
 %build
 %configure --libdir=%{_prefix}/lib
-make_build
+%make_build
 
 %install
 %make_install
