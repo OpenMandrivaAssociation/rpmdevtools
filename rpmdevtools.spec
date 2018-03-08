@@ -59,7 +59,6 @@ rpmdev-bumpspec     Bump revision in specfile
 
 %prep
 %setup -q
-sed -i 's|/usr/bin/python|%__python2|' rpmdev*
 
 %build
 %configure --libdir=%{_prefix}/lib
@@ -77,7 +76,6 @@ for dir in %{_emacs_sitestartdir} ; do
   ln -s %{_datadir}/rpmdevtools/rpmdev-init.el $RPM_BUILD_ROOT$dir
   touch $RPM_BUILD_ROOT$dir/rpmdev-init.elc
 done
-
 
 %files
 %doc COPYING NEWS
