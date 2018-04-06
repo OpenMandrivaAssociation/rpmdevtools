@@ -4,7 +4,7 @@
 Summary:	RPM Development Tools
 Name:		rpmdevtools
 Version:	8.10
-Release:	3
+Release:	4
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
 License:	GPLv2+ and GPLv2
 URL:		https://fedorahosted.org/rpmdevtools/
@@ -28,7 +28,7 @@ Requires:	python >= 3
 Requires:	python-rpm
 Requires:	sed
 Suggests: emacs-common
-Recommends:	rpm-build >= 4.4.2.3
+Suggests:	rpm-build >= 4.4.2.3
 
 %description
 This package contains scripts and (X)Emacs support files to aid in
