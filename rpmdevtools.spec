@@ -1,10 +1,13 @@
 %global _emacs_sitestartdir %{_datadir}/emacs/site-lisp/site-start.d
 %global spectool_version 1.0.10
 
+%global __provides_exclude_from %{_bindir}/spectool
+%global __requires_exclude perl\\((File::|FileHandle|Getopt::|strict))
+
 Summary:	RPM Development Tools
 Name:		rpmdevtools
 Version:	8.10
-Release:	4
+Release:	5
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
 License:	GPLv2+ and GPLv2
 URL:		https://fedorahosted.org/rpmdevtools/
@@ -27,7 +30,7 @@ Requires:	grep
 Requires:	python >= 3
 Requires:	python-rpm
 Requires:	sed
-Suggests: emacs-common
+Suggests:	emacs-common
 Suggests:	rpm-build >= 4.4.2.3
 
 %description
