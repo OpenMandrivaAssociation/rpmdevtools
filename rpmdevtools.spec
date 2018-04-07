@@ -2,7 +2,7 @@
 %global spectool_version 1.0.10
 
 %global __reqires_exclude_from %{_bindir}/spectool
-%global __requires_exclude /usr/bin/perl
+%global __requires_exclude /usr/bin/perl|perl\\(.*)
 
 Summary:	RPM Development Tools
 Name:		rpmdevtools
