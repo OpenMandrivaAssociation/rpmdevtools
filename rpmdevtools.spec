@@ -7,11 +7,14 @@
 Summary:	RPM Development Tools
 Name:		rpmdevtools
 Version:	8.10
-Release:	6
+Release:	7
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
 License:	GPLv2+ and GPLv2
 URL:		https://pagure.io/rpmdevtools
 Source0:	https://releases.pagure.org/rpmdevtools/%{name}-%{version}.tar.xz
+# (tpg) add patch from Fedora
+Patch0:		https://src.fedoraproject.org/rpms/rpmdevtools/raw/master/f/0001-bumpspec-checksig-Avoid-python-3.6-regex-related-dep.patch
+Patch1:		https://src.fedoraproject.org/rpms/rpmdevtools/raw/master/f/0001-Limit-newVersion-s-re.sub-to-a-single-replacement.patch
 BuildArch:	noarch
 # help2man, pod2man, *python for creating man pages
 BuildRequires:	help2man
@@ -52,7 +55,7 @@ rpmdev-bumpspec     Bump revision in specfile
 
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 %configure --libdir=%{_prefix}/lib
