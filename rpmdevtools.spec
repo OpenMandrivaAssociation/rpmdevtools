@@ -6,20 +6,26 @@
 
 Summary:	RPM Development Tools
 Name:		rpmdevtools
-Version:	8.10
-Release:	7
+Version:	9.3
+Release:	1
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
 License:	GPLv2+ and GPLv2
 URL:		https://pagure.io/rpmdevtools
 Source0:	https://releases.pagure.org/rpmdevtools/%{name}-%{version}.tar.xz
-# (tpg) add patch from Fedora
-Patch0:		https://src.fedoraproject.org/rpms/rpmdevtools/raw/master/f/0001-bumpspec-checksig-Avoid-python-3.6-regex-related-dep.patch
-Patch1:		https://src.fedoraproject.org/rpms/rpmdevtools/raw/master/f/0001-Limit-newVersion-s-re.sub-to-a-single-replacement.patch
+# Use Accept-Encoding: identity together with decode_content=False
+# This is to avoid text files downloaded gzipped
+Patch1:		https://pagure.io/rpmdevtools/pull-request/77.patch
+
+# Fedora-specific downstream patches
+## Force legacy datestamp by default until rhbz#1715412 is resolved
+Patch1001:	0001-Force-legacy-datestamp-while-RHBZ-1715412-is-still-a.patch
+
 BuildArch:	noarch
 # help2man, pod2man, *python for creating man pages
 BuildRequires:	help2man
-BuildRequires:	python >= 3
-BuildRequires:	python-rpm
+BuildRequires:	python3dist(progressbar2)
+BuildRequires:	python3dist(requests)
+BuildRequires:	python3dist(rpm)
 # emacs-common >= 1:22.3-3 for macros.emacs
 BuildRequires:	emacs-common
 Provides:	spectool = %{spectool_version}
@@ -30,8 +36,9 @@ Requires:	file
 Requires:	findutils
 Requires:	gawk
 Requires:	grep
-Requires:	python >= 3
-Requires:	python-rpm
+Requires:	python3dist(progressbar2)
+Requires:	python3dist(requests)
+Requires:	python3dist(rpm)
 Requires:	sed
 Suggests:	emacs-common
 Suggests:	rpm-build >= 4.4.2.3
@@ -65,9 +72,9 @@ rpmdev-bumpspec     Bump revision in specfile
 %make_install
 
 for dir in %{_emacs_sitestartdir} ; do
-  install -dm 755 $RPM_BUILD_ROOT$dir
-  ln -s %{_datadir}/rpmdevtools/rpmdev-init.el $RPM_BUILD_ROOT$dir
-  touch $RPM_BUILD_ROOT$dir/rpmdev-init.elc
+  install -dm 755 %{buildroot}/$dir
+  ln -s %{_datadir}/rpmdevtools/rpmdev-init.el %{buildroot}/$dir
+  touch %{buildroot}/$dir/rpmdev-init.elc
 done
 
 %files
