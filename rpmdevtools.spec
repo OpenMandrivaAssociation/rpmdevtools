@@ -6,20 +6,12 @@
 
 Summary:	RPM Development Tools
 Name:		rpmdevtools
-Version:	9.3
+Version:	9.6
 Release:	1
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
 License:	GPLv2+ and GPLv2
 URL:		https://pagure.io/rpmdevtools
 Source0:	https://releases.pagure.org/rpmdevtools/%{name}-%{version}.tar.xz
-# Use Accept-Encoding: identity together with decode_content=False
-# This is to avoid text files downloaded gzipped
-Patch1:		https://pagure.io/rpmdevtools/pull-request/77.patch
-
-# Fedora-specific downstream patches
-## Force legacy datestamp by default until rhbz#1715412 is resolved
-Patch1001:	0001-Force-legacy-datestamp-while-RHBZ-1715412-is-still-a.patch
-
 BuildArch:	noarch
 # help2man, pod2man, *python for creating man pages
 BuildRequires:	help2man
@@ -85,5 +77,5 @@ done
 %{_bindir}/*
 %{_emacs_sitestartdir}/rpmdev-init.el
 %ghost %{_emacs_sitestartdir}/rpmdev-init.elc
-%{_mandir}/man1/*.1*
-%{_mandir}/man8/*.8*
+%doc %{_mandir}/man1/*.1*
+%doc %{_mandir}/man8/*.8*
