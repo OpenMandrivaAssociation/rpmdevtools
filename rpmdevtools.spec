@@ -7,7 +7,7 @@
 Summary:	RPM Development Tools
 Name:		rpmdevtools
 Version:	9.6
-Release:	1
+Release:	2
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
 License:	GPLv2+ and GPLv2
 URL:		https://pagure.io/rpmdevtools
