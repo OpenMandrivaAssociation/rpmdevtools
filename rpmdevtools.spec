@@ -7,7 +7,7 @@
 Summary:	RPM Development Tools
 Name:		rpmdevtools
 Version:	9.6
-Release:	2
+Release:	3
 # rpmdev-setuptree is GPLv2, everything else GPLv2+
 License:	GPLv2+ and GPLv2
 URL:		https://pagure.io/rpmdevtools
@@ -15,9 +15,9 @@ Source0:	https://releases.pagure.org/rpmdevtools/%{name}-%{version}.tar.xz
 BuildArch:	noarch
 # help2man, pod2man, *python for creating man pages
 BuildRequires:	help2man
-BuildRequires:	python3dist(progressbar2)
-BuildRequires:	python3dist(requests)
-BuildRequires:	python3dist(rpm)
+BuildRequires:	python%{pyver}dist(progressbar2)
+BuildRequires:	python%{pyver}dist(requests)
+BuildRequires:	python%{pyver}dist(rpm)
 # emacs-common >= 1:22.3-3 for macros.emacs
 BuildRequires:	emacs-common
 Provides:	spectool = %{spectool_version}
@@ -28,9 +28,9 @@ Requires:	file
 Requires:	findutils
 Requires:	gawk
 Requires:	grep
-Requires:	python3dist(progressbar2)
-Requires:	python3dist(requests)
-Requires:	python3dist(rpm)
+#Requires:	python%{pyver}dist(progressbar2)
+#Requires:	python%{pyver}dist(requests)
+#Requires:	python%{pyver}dist(rpm)
 Requires:	sed
 Suggests:	emacs-common
 Suggests:	rpm-build >= 4.4.2.3
