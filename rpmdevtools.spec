@@ -31,9 +31,9 @@ Requires:	file
 Requires:	findutils
 Requires:	gawk
 Requires:	grep
-#Requires:	python%{pyver}dist(progressbar2)
-#Requires:	python%{pyver}dist(requests)
-#Requires:	python%{pyver}dist(rpm)
+Requires:	python%{pyver}dist(progressbar2)
+Requires:	python%{pyver}dist(requests)
+Requires:	python%{pyver}dist(rpm)
 Requires:	sed
 Suggests:	emacs-common
 Suggests:	rpm-build >= 4.4.2.3
