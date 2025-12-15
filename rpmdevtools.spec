@@ -18,6 +18,9 @@ BuildRequires:	help2man
 BuildRequires:	python%{pyver}dist(progressbar2)
 BuildRequires:	python%{pyver}dist(requests)
 BuildRequires:	python%{pyver}dist(rpm)
+BuildRequires:	pkgconfig(bash-completion)
+BuildRequires:	autoconf
+BuildRequires:	make
 # emacs-common >= 1:22.3-3 for macros.emacs
 BuildRequires:	emacs-common
 Provides:	spectool = %{spectool_version}
@@ -72,7 +75,7 @@ done
 %files
 %doc COPYING NEWS
 %config(noreplace) %{_sysconfdir}/rpmdevtools/
-%{_sysconfdir}/bash_completion.d/
+%{_datadir}/bash-completion/completions/*
 %{_datadir}/rpmdevtools/
 %{_bindir}/*
 %{_emacs_sitestartdir}/rpmdev-init.el
