@@ -14,6 +14,9 @@ URL:		https://pagure.io/rpmdevtools
 Source0:	https://releases.pagure.org/rpmdevtools/%{name}-%{version}.tar.xz
 BuildArch:	noarch
 # help2man, pod2man, *python for creating man pages
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	help2man
 BuildRequires:	python%{pyver}dist(progressbar2)
 BuildRequires:	python%{pyver}dist(requests)
